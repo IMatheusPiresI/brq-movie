@@ -1,4 +1,4 @@
-import React, { createElement, useRef } from 'react';
+import React, { createElement, useMemo, useRef } from 'react';
 import {
   interpolate,
   interpolateColor,
@@ -6,24 +6,40 @@ import {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-import { TextInput } from 'react-native';
+import {
+  NativeSyntheticEvent,
+  TextInput,
+  TextInputFocusEventData,
+} from 'react-native';
 import { IProps, IViewProps } from './types';
 
 import View from './view';
 import theme from '@src/resources/theme';
 
-const InputAuth: React.FC<IProps> = ({ label, type, onClear, ...rest }) => {
+const InputAuth: React.FC<IProps> = ({
+  label,
+  type,
+  error,
+  touched,
+  onClear,
+  ...rest
+}) => {
   const ANIMATE_TIMEOUT = 400;
   const labelAnimate = useSharedValue(0);
   const inputRef = useRef<TextInput>(null);
+
+  const showError = !!touched && !!error;
 
   const handleFocus = () => {
     inputRef.current?.focus();
     labelAnimate.value = withTiming(1, { duration: ANIMATE_TIMEOUT });
   };
 
-  const handleBlur = () => {
+  const handleBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     inputRef.current?.blur();
+    if (rest.onBlur) {
+      rest.onBlur(e);
+    }
     if (rest.value && rest.value.length > 1) return;
     labelAnimate.value = withTiming(0, { duration: ANIMATE_TIMEOUT });
   };
@@ -52,8 +68,12 @@ const InputAuth: React.FC<IProps> = ({ label, type, onClear, ...rest }) => {
     const borderBottomColor = interpolateColor(
       labelAnimate.value,
       [0, 1],
-      [theme.colors.secondary, theme.colors.primary],
+      [
+        showError ? theme.colors.error : theme.colors.secondary,
+        showError ? theme.colors.error : theme.colors.primary,
+      ],
     );
+
     return {
       borderBottomColor,
     };
@@ -64,6 +84,9 @@ const InputAuth: React.FC<IProps> = ({ label, type, onClear, ...rest }) => {
     rAnimateBorder,
     label,
     type,
+    error,
+    showError,
+    touched,
     inputRef,
     handleClear,
     handleFocus,

@@ -18,32 +18,38 @@ const InputAuthView: React.FC<IViewProps> = ({
   type,
   inputRef,
   rAnimateBorder,
+  showError,
+  error,
+  touched,
   handleFocus,
   handleClear,
   handleBlur,
   ...rest
 }) => {
   return (
-    <S.Container style={rAnimateBorder}>
-      <S.InputText
-        {...rest}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        ref={inputRef}
-      />
-      <S.BoxIcon>
-        {type === 'password' ? (
-          <LockSVG onPress={handleFocus} />
-        ) : (
-          <UserSVG onPress={handleFocus} />
-        )}
-      </S.BoxIcon>
-      <S.Label style={rAnimateLabel} onPress={handleFocus}>
-        {label}
-      </S.Label>
-      <S.ButtonClearInput onPress={handleClear}>
-        <ClearSVG />
-      </S.ButtonClearInput>
+    <S.Container>
+      <S.InputContainer style={rAnimateBorder}>
+        <S.InputText
+          {...rest}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          ref={inputRef}
+        />
+        <S.BoxIcon>
+          {type === 'password' ? (
+            <LockSVG onPress={handleFocus} />
+          ) : (
+            <UserSVG onPress={handleFocus} />
+          )}
+        </S.BoxIcon>
+        <S.Label style={rAnimateLabel} onPress={handleFocus}>
+          {label}
+        </S.Label>
+        <S.ButtonClearInput onPress={handleClear}>
+          <ClearSVG />
+        </S.ButtonClearInput>
+      </S.InputContainer>
+      {showError && <S.Error>{error}</S.Error>}
     </S.Container>
   );
 };
