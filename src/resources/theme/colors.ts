@@ -4,4 +4,5 @@ export default {
   tertiary: '#2E2F33',
   neutral: '#16171B',
   gray: '#A9A9A9',
+  error: '#FF0000',
 };
