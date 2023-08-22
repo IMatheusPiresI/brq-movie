@@ -14,7 +14,7 @@ module.exports = {
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        'prettier/prettier': 'off',
+        'prettier/prettier': 'warn',
         'object-curly-spacing': ['warn', 'always'],
         'react/jsx-uses-react': 1,
         'arrow-body-style': ['warn'],
