@@ -1,10 +1,10 @@
 import {
+  CardStyleInterpolators,
   createStackNavigator,
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import { Header } from '@src/components/Header';
 import Film from '@src/screens/App/Film';
-import Home from '@src/screens/App/Home';
 import SignIn from '@src/screens/Auth/SignIn';
 import { TopTabRoutes } from '../Tabs/tabs.routes';
 
@@ -12,6 +12,7 @@ const Stack = createStackNavigator();
 
 const stackOptions: StackNavigationOptions = {
   headerShown: false,
+  cardStyleInterpolator: CardStyleInterpolators.forFadeFromCenter,
 };
 
 const StackAuth = () => (
