@@ -20,7 +20,7 @@ export const InputText = styled.TextInput`
   color: ${({ theme }) => theme.colors.secondary};
   font-family: ${({ theme }) => theme.fonts.ROBOTO_REGULAR};
   font-size: 16px;
-  padding-top: 8px;
+  padding-top: 14px;
   padding-left: 48px;
   padding-right: 48px;
 `;

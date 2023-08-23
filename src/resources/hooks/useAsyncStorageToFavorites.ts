@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ITMDBFilm } from '@src/services/TMDB/types';
-import { showToastError } from '../helpers/toast';
+import { showToastError, showToastSuccess } from '../helpers/toast';
 
 export const useAsyncStorageToFavorites = () => {
   const FAVORITE_KEY = '@BRQMovies-Favorites';
@@ -35,6 +35,7 @@ export const useAsyncStorageToFavorites = () => {
         FAVORITE_KEY,
         JSON.stringify([...allFilms, film]),
       );
+      showToastSuccess('Filme Adicionado aos favoritos!');
     } catch (err) {
       showToastError('Erro ao adicionar filme como favorito, tente novamente!');
     }
@@ -52,6 +53,7 @@ export const useAsyncStorageToFavorites = () => {
       const newFilms = allFilms.filter((prevFilms) => prevFilms.id !== film.id);
 
       await AsyncStorage.setItem(FAVORITE_KEY, JSON.stringify(newFilms));
+      showToastSuccess('Filme Removido dos favoritos!');
     } catch (err) {
       showToastError('Erro ao remove filme dos favoritos, tente novamente!');
     }

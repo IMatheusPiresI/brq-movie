@@ -9,3 +9,13 @@ export const showToastError = (text: string) => {
     onPress: Toast.hide,
   });
 };
+
+export const showToastSuccess = (text: string) => {
+  Toast.show({
+    type: 'success',
+    text1: text,
+    position: 'bottom',
+    bottomOffset: 80,
+    onPress: Toast.hide,
+  });
+};
