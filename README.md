@@ -7,46 +7,45 @@
 <details>
 <summary>Summary</summary>
 ◽ <a href="#inicio">Architecture</a> <br>
-◽ <a href="#lib">Bibliotecas</a> <br>
+◽ <a href="#lib">Libraries</a> <br>
 ◽ <a href="#instalacao">Clonar Projeto</a> <br>
 </details>
 
 <h2 id="inicio">Project Architecture</h2>
 
-<h3>Arquitetura de Container</h3>
+<h3>Container Architecture</h3>
 <ul>
-   <li>Essa arquitetura consiste na separação entre lógica, visualização, estilização e tipagem.</li>
-   <li>Similar ao MVVM, faz com que cada arquivo tenha sua responsabilidade.</li>
-   <li>Prós: Melhora na manutenção do código, reaproveitamento de tipagens, melhor organização, separação de responsabilidade, fácil entendimento, força o projeto a ter tipagens bem estabelecidas, reaproveitamento de código.</li>
-    <li>Contras: Fluxo grande de tipagem para components, sende necessário tipa 1 prop em múltiplos arquivos, não tão adequada ao uso de fowardRef, maior verbosidade devido o nível de separação de responsabilidade.</li>
+   <li>This architecture consists of the separation between logic (index.ts), view (view.tsx), styling (styles.ts) and typing (types.ts).</li>
+   <li>Similar to MVVM, it makes each file accountable.</li>
+   <li>Pros: Improved code maintenance, reusable typings, better organization, separation of responsibilities, easy understanding, forces the project to have well-established typings, code repurposing.</li>
+    <li>Cons: Big flow of typing for components, need to type 1 prop in multiple files, not well suited to using forwardRef, higher verbosity due to level of separation of responsibility.</li>
 </ul>
 
-<h2 id="lib">Bibliotecas utilizadas</h2>
+<h2 id="lib">Libraries used</h2>
 
-<h3>Bibliotecas</h3>
+<h3>Libraries</h3>
 <ul>
-   <li>Formik: O Formik simplifica a gestão de formulários no React assim como o React Hook Form.</li>
-   <li>Yup: Validação/Criação de schemas para regras dos campos dos formulários.</li>
-   <li>Axios: Utilização do Axios para consumo de API REST.</li>
-   <li>React-Native-Reanimated: Criação das animações do aplicativo para melhor experiência do usuário.</li>
-   <li>React-Navigation: Criação das rotas do App, Stack, Material Top Tap Navigatior e demais actions, como StackActions, e demais tratativas de rotas.</li>
-   <li>@react-navigation/material-top-tabs: Criação da navegação em Top Tabs do Aplicativo.</li>
-   <li>react-native-toast-message: Criação dos toasts de aviso para o usuário, sejam eles de erros ou sucesso.</li>
-   <li>styled-components: Criação do Thema, e estilização do projeto, sendo uma ótima ferramenta em conjunto com Reanimated para criação de telas customizadas sem grandes limitações.</li>
-   <li>react-native-splash-screen: Criação da Splash Screen do App.</li>
-   <li>eslint/prettier: Criação do padrão de formatação/código do projeto.</li>
-   <li>react-native-svg/react-native-svg-transformer: Utilização das importações e uso de SVG`s dentro do projeto.</li>
-   <li>jest: Criação dos testes unitários para integridade do projeto.</li>
+   <li>Formik: Formik simplifies form management in React as well as React Hook Form.</li>
+   <li>Yup: Validation/Creation of schemas for form field rules.</li>
+   <li>Axios: Using Axios for REST API consumption.</li>
+   <li>React-Native-Reanimated: Creation of app animations for better user experience.</li>
+   <li>React-Navigation: Creation of routes for the App, Stack, Material Top Tap Navigatior and other actions, such as StackActions, and other route handling.</li>
+   <li>@react-navigation/material-top-tabs: Creation of navigation in Application Top Tabs.</li>
+   <li>react-native-toast-message: Creation of warning toasts for the user, whether they are for errors or success.</li>
+   <li>styled-components: Creation of the Thema, and stylization of the project, being a great tool together with Reanimated for creating custom screens without major limitations.</li>
+   <li>react-native-splash-screen: Creating the Splash Screen of the App.</li>
+   <li>eslint/prettier: Creation of the project's formatting/code pattern.</li>
+   <li>react-native-svg/react-native-svg-transformer: Using imports and using SVG`s within the project.</li>
+   <li>jest: Creation of unit tests for project integrity.</li>
 </ul>
 
-<h3 id="instalacao">📁 Inicialização da Clonagem</h3>
+<h3 id="instalacao">📁 Cloning Initialization</h3>
 
-◽ <a href="">Acessar</a>🔗 o código fonte pelo GitHub. <br>
-◽ Clonar o repositório ultilizando Git Bash + o comando:
+◽ Clone the repository using Git Bash + the command:
 
        $ git clone git@github.com:IMatheusPiresI/brq-movie.git
 
-◽ Acessar a pasta to-ducks-tasks e executar o comando <br>
+◽ Access the project folder and run the command <br>
 
         $ yarn
 
@@ -56,7 +55,7 @@
 
 ◽ IOS:  <br>
 
-        $ yarn pod (Esse comando já configurado fará `cd ios && pod install`)
+        $ yarn pod (This already configured command will do `cd ios && pod install`)
 
         $ yarn ios
 
