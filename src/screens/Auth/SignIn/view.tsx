@@ -16,7 +16,11 @@ const SignInView: React.FC<IViewProps> = ({ onClearInput, formik }) => (
           <S.Content>
             <S.BoxForm>
               <S.BoxImage>
-                <S.LogoImage source={Logo} alt="logo BRQMovies" />
+                <S.LogoImage
+                  source={Logo}
+                  alt="logo BRQMovies"
+                  testID="logo-app"
+                />
               </S.BoxImage>
               <InputAuth
                 label="Usuário"
@@ -28,6 +32,7 @@ const SignInView: React.FC<IViewProps> = ({ onClearInput, formik }) => (
                 touched={formik.touched.user}
                 onBlur={formik.handleBlur('user')}
                 autoCapitalize="none"
+                testID="input-user"
               />
               <S.BoxInputForm>
                 <InputAuth
@@ -42,12 +47,14 @@ const SignInView: React.FC<IViewProps> = ({ onClearInput, formik }) => (
                   onBlur={formik.handleBlur('password')}
                   autoCapitalize="none"
                   keyboardType="numeric"
+                  testID="input-password"
                 />
               </S.BoxInputForm>
               <Button
                 title="Entrar"
                 disabled={!formik.isValid}
                 onPress={() => formik.handleSubmit()}
+                testID="button-signin"
               />
               <S.BoxButtonForgotPassword>
                 <Button title="Esqueci a Senha" variant="secondary" />
