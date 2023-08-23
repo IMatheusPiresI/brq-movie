@@ -14,6 +14,8 @@ import {
   useSharedValue,
 } from 'react-native-reanimated';
 import theme from '@src/resources/theme';
+import { useAsyncStorageToFavorites } from '@src/resources/hooks/useAsyncStorageToFavorites';
+import { useFavorite } from '@src/resources/hooks/useFavorite';
 
 const Film: React.FC = () => {
   const POSTER_HEIGHT = theme.metrics.screenHeight * 0.7;
@@ -21,10 +23,15 @@ const Film: React.FC = () => {
   const { top } = useSafeAreaInsets();
   const route = useRoute();
   const navigation = useNavigation();
+  const { addOrRemoveFilmToFavorites } = useFavorite();
   const { film } = route.params as { film: ITMDBFilm };
 
   const handleGoBack = () => {
     navigation.goBack();
+  };
+
+  const handleSaveFilmToFavorite = async () => {
+    await addOrRemoveFilmToFavorites(film);
   };
 
   const scrollHandler = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -51,6 +58,7 @@ const Film: React.FC = () => {
     film,
     safeAreaTop: top,
     rAnimateShowHeader,
+    handleSaveFilmToFavorite,
     scrollHandler,
     handleGoBack,
   };

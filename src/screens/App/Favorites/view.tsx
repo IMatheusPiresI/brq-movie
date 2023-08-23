@@ -4,10 +4,10 @@ import React from 'react';
 import * as S from './styles';
 import { IViewProps } from './types';
 
-const FavoritesView: React.FC<IViewProps> = () => {
+const FavoritesView: React.FC<IViewProps> = ({ favoriteFilms }) => {
   return (
     <S.Container>
-      <ListFilms films={[]} />
+      <ListFilms films={favoriteFilms} />
     </S.Container>
   );
 };

@@ -19,6 +19,7 @@ const ListFilmsView: React.FC<IViewProps> = ({ films }) => {
       <S.List
         data={films}
         numColumns={2}
+        keyExtractor={(item) => `${item.id}`}
         initialNumToRender={10}
         decelerationRate="fast"
         renderItem={renderItem}

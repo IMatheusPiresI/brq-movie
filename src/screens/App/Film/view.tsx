@@ -15,6 +15,7 @@ const FilmView: React.FC<IViewProps> = ({
   film,
   safeAreaTop,
   rAnimateShowHeader,
+  handleSaveFilmToFavorite,
   scrollHandler,
   handleGoBack,
 }) => {
@@ -25,7 +26,7 @@ const FilmView: React.FC<IViewProps> = ({
           <S.ButtonGoBack onPress={handleGoBack}>
             <ArrowBackDefaultSVG width={24} height={24} />
           </S.ButtonGoBack>
-          <S.ButtonFavorite>
+          <S.ButtonFavorite onPress={handleSaveFilmToFavorite}>
             <HearthDefaultSVG width={24} height={24} />
           </S.ButtonFavorite>
         </S.BoxHeaderTransparent>
@@ -36,7 +37,7 @@ const FilmView: React.FC<IViewProps> = ({
             <ArrowBackPrimarySVG width={24} height={24} />
           </S.ButtonGoBack>
           <S.TitleHeader numberOfLines={1}>{film.name}</S.TitleHeader>
-          <S.ButtonFavorite>
+          <S.ButtonFavorite onPress={handleSaveFilmToFavorite}>
             <HearthPrimarySVG width={24} height={24} />
           </S.ButtonFavorite>
         </S.BoxHeaderBackground>
@@ -55,7 +56,11 @@ const FilmView: React.FC<IViewProps> = ({
         <S.Content>
           <S.TitleFilm>{film.name}</S.TitleFilm>
           <S.TitleSinopse>SINOPSE</S.TitleSinopse>
-          <S.Sinopse>{film.overview}</S.Sinopse>
+          <S.Sinopse>
+            {film.overview !== ''
+              ? film.overview
+              : 'Esse produto não possui sinopse disponível'}
+          </S.Sinopse>
           <S.BoxFilmInfo>
             <S.BoxRowLabel>
               <S.BoxLabel>
