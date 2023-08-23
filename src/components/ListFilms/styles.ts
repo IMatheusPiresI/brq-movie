@@ -19,3 +19,14 @@ export const List = styled.FlatList.attrs({
 export const Separator = styled.View`
   height: 16px;
 `;
+
+export const ContentEmpty = styled.View`
+  flex: 1;
+`;
+
+export const MessageEmpty = styled.Text`
+  font-size: 20px;
+  font-family: ${({ theme }) => theme.fonts.NUNITO_BOLD};
+  color: ${({ theme }) => theme.colors.secondary};
+  text-align: center;
+`;

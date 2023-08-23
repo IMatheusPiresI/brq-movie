@@ -10,6 +10,10 @@ const ListFilmsView: React.FC<IViewProps> = ({ films }) => {
   const renderItem = ({ item }: ListRenderItemInfo<ITMDBFilm>) => {
     return <CardListFilm film={item} />;
   };
+  const renderSeparator = () => {
+    return <S.Separator />;
+  };
+
   return (
     <S.Container>
       <S.List
@@ -18,7 +22,12 @@ const ListFilmsView: React.FC<IViewProps> = ({ films }) => {
         initialNumToRender={10}
         decelerationRate="fast"
         renderItem={renderItem}
-        ItemSeparatorComponent={() => <S.Separator />}
+        ListEmptyComponent={() => (
+          <S.ContentEmpty>
+            <S.MessageEmpty>Nenhum filme, encontrado!</S.MessageEmpty>
+          </S.ContentEmpty>
+        )}
+        ItemSeparatorComponent={renderSeparator}
       />
     </S.Container>
   );

@@ -1,0 +1,33 @@
+export const mockListFilm = [
+  {
+    backdrop_path: '/oOce9hLMVFubjAJliau4kiSNPnW.jpg',
+    first_air_date: '1990-09-13',
+    genre_ids: [80, 18],
+    id: 549,
+    name: 'Lei & Ordem',
+    origin_country: ['US'],
+    original_language: 'en',
+    original_name: 'Law & Order',
+    overview:
+      'O drama mostra o processo complicado de determinar a culpa ou a inocência, quando vidas estão em jogo. Muitas vezes inspirado pelas notícias mais recentes, o enredo destaca dilemas éticos e pessoais.',
+    popularity: 3818.227,
+    poster_path: '/1Opw4Qfiza2Uk5ENZgLWVmQyzoL.jpg',
+    vote_average: 7.6,
+    vote_count: 441,
+  },
+  {
+    backdrop_path: '/jWXrQstj7p3Wl5MfYWY6IHqRpDb.jpg',
+    first_air_date: '1952-12-26',
+    genre_ids: [10763],
+    id: 94722,
+    name: 'Tagesschau',
+    origin_country: ['DE'],
+    original_language: 'de',
+    original_name: 'Tagesschau',
+    overview: '',
+    popularity: 5104.121,
+    poster_path: '/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg',
+    vote_average: 7.5,
+    vote_count: 127,
+  },
+];

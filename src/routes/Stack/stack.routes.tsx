@@ -3,6 +3,7 @@ import {
   StackNavigationOptions,
 } from '@react-navigation/stack';
 import { Header } from '@src/components/Header';
+import Film from '@src/screens/App/Film';
 import Home from '@src/screens/App/Home';
 import SignIn from '@src/screens/Auth/SignIn';
 import { TopTabRoutes } from '../Tabs/tabs.routes';
@@ -28,6 +29,7 @@ const StackApp = () => (
         header: () => <Header />,
       }}
     />
+    <Stack.Screen name="Film" component={Film} options={stackOptions} />
   </Stack.Navigator>
 );
 

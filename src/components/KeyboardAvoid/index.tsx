@@ -6,7 +6,8 @@ export const KeyboardAvoid: React.FC<IProps> = ({ children }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1 }}>
+      style={{ flex: 1 }}
+      testID="keyboard-view">
       {children}
     </KeyboardAvoidingView>
   );
