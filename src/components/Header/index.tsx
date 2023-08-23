@@ -6,7 +6,6 @@ import View from './view';
 export const Header: React.FC = () => {
   const { top } = useSafeAreaInsets();
 
-  console.log(top);
   const viewProps: IViewProps = {
     safeMarginTop: top,
   };
