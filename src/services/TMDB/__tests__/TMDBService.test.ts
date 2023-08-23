@@ -1,6 +1,5 @@
 import { mockListFilm } from '@src/resources/mock/mockListFilm';
 import { apiTMDB } from '@src/services';
-import React = require('react');
 import { TMDBService } from '..';
 import { ITMDBFilm } from '../types';
 

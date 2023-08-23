@@ -1,6 +1,5 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { TMDBService } from '@src/services/TMDB';
-import { IResultTMDBGetFilms, ITMDBFilm } from '@src/services/TMDB/types';
+import { ITMDBFilm } from '@src/services/TMDB/types';
 import React, { createElement } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
@@ -9,12 +8,10 @@ import { IViewProps } from './types';
 import View from './view';
 import {
   interpolate,
-  opacity,
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
 import theme from '@src/resources/theme';
-import { useAsyncStorageToFavorites } from '@src/resources/hooks/useAsyncStorageToFavorites';
 import { useFavorite } from '@src/resources/hooks/useFavorite';
 
 const Film: React.FC = () => {

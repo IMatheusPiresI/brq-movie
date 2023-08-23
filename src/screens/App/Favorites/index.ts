@@ -1,11 +1,5 @@
-import { useAsyncStorageToFavorites } from '@src/resources/hooks/useAsyncStorageToFavorites';
 import { useFavorite } from '@src/resources/hooks/useFavorite';
-import React, {
-  createElement,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-} from 'react';
+import React, { createElement } from 'react';
 import { IViewProps } from './types';
 
 import View from './view';
