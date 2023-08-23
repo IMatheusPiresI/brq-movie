@@ -1,5 +1,6 @@
 import { IBeneficiaryState } from '@src/screens/App/Attendance/Beneficiary/BeneficiaryManagement/types';
 import { ISimulations } from '@src/services/loan/types';
+import { ITMDBFilm } from '@src/services/TMDB/types';
 import {
   IBeneficiariesShare,
   IBeneficiaryCreate,
@@ -14,6 +15,7 @@ export declare global {
       AppRoutes: undefined;
       Home: undefined;
       SignIn: undefined;
+      Film: { film: ITMDBFilm };
     }
   }
 }

@@ -1,5 +1,6 @@
 import { StackActions, useNavigation } from '@react-navigation/native';
 import { ITypeAuthInput } from '@src/components/InputAuth/types';
+import { showToastError } from '@src/resources/helpers/toast';
 import { useFormik } from 'formik';
 import React, { createElement } from 'react';
 import { signInSchema } from './schemas/signInSchema';
@@ -20,7 +21,13 @@ const SignIn: React.FC = () => {
   });
 
   const handleSubmitLogin = (values: IFormSignInValues) => {
-    navigation.dispatch(StackActions.replace('AppRoutes'));
+    if (values.user === 'user' && values.password === '123') {
+      navigation.dispatch(StackActions.replace('AppRoutes'));
+      return;
+    }
+    showToastError(
+      'Credenciais inválidas, verique suas informações e tente novamente!',
+    );
   };
 
   const onClearInput = (type: ITypeAuthInput) => {

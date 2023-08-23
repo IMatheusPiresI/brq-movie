@@ -27,17 +27,21 @@ const SignInView: React.FC<IViewProps> = ({ onClearInput, formik }) => (
                 error={formik.errors.user}
                 touched={formik.touched.user}
                 onBlur={formik.handleBlur('user')}
+                autoCapitalize="none"
               />
               <S.BoxInputForm>
                 <InputAuth
                   label="Senha"
                   type="password"
+                  secureTextEntry
                   value={formik.values.password}
                   onChangeText={formik.handleChange('password')}
                   onClear={onClearInput}
                   error={formik.errors.password}
                   touched={formik.touched.password}
                   onBlur={formik.handleBlur('password')}
+                  autoCapitalize="none"
+                  keyboardType="numeric"
                 />
               </S.BoxInputForm>
               <Button

@@ -3,12 +3,14 @@ import { IViewProps } from './types';
 
 import * as S from './styles';
 
-import OptionsSVG from '@assets/svg/options.svg';
-
-const CardListFilmView: React.FC<IViewProps> = ({ film }) => {
+const CardListFilmView: React.FC<IViewProps> = ({ film, handleShowFilm }) => {
   return (
-    <S.Card activeOpacity={0.7}>
+    <S.Card
+      activeOpacity={0.7}
+      onPress={handleShowFilm}
+      testID="button-card-film">
       <S.FilmImage
+        testID="image-film"
         source={{
           uri: `https://image.tmdb.org/t/p/w500${
             film.poster_path ?? film.backdrop_path

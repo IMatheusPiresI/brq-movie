@@ -6,6 +6,7 @@ type IProps = {
 
 type IViewProps = {
   film: ITMDBFilm;
+  handleShowFilm: () => void;
 };
 
 export type { IProps, IViewProps };

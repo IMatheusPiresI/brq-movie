@@ -27,25 +27,26 @@ const InputAuthView: React.FC<IViewProps> = ({
   ...rest
 }) => {
   return (
-    <S.Container>
-      <S.InputContainer style={rAnimateBorder}>
+    <S.Container testID="input-auth-container">
+      <S.InputContainer style={rAnimateBorder} testID="input-container">
         <S.InputText
           {...rest}
           onFocus={handleFocus}
           onBlur={handleBlur}
           ref={inputRef}
+          testID="input-auth"
         />
         <S.BoxIcon>
           {type === 'password' ? (
-            <LockSVG onPress={handleFocus} />
+            <LockSVG onPress={handleFocus} testID="password-icon" />
           ) : (
-            <UserSVG onPress={handleFocus} />
+            <UserSVG onPress={handleFocus} testID="user-icon" />
           )}
         </S.BoxIcon>
         <S.Label style={rAnimateLabel} onPress={handleFocus}>
           {label}
         </S.Label>
-        <S.ButtonClearInput onPress={handleClear}>
+        <S.ButtonClearInput onPress={handleClear} testID="input-auth-clear">
           <ClearSVG />
         </S.ButtonClearInput>
       </S.InputContainer>

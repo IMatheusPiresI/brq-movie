@@ -5,7 +5,6 @@ import {
   interpolate,
   useAnimatedStyle,
   useSharedValue,
-  withSpring,
   withTiming,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -31,8 +30,10 @@ export const Header: React.FC = () => {
   };
 
   const handleLogout = () => {
+    handleCloseOptions();
     navigation.dispatch(StackActions.replace('Authentication'));
   };
+
   const verifyShowOptions = useCallback(() => {
     if (showOptions) {
       animateShowOptions.value = withTiming(1, {
