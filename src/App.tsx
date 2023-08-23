@@ -5,15 +5,18 @@ import theme from '@src/resources/theme';
 import { ThemeProvider } from 'styled-components/native';
 import 'react-native-gesture-handler';
 import { AppRoutes } from '@src/routes';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <AppRoutes />
-    <StatusBar
-      barStyle={'light-content'}
-      translucent
-      backgroundColor={'transparent'}
-    />
+    <SafeAreaProvider>
+      <AppRoutes />
+      <StatusBar
+        barStyle={'light-content'}
+        translucent
+        backgroundColor={'transparent'}
+      />
+    </SafeAreaProvider>
   </ThemeProvider>
 );
 
