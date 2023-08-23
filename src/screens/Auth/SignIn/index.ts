@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native';
+import { StackActions, useNavigation } from '@react-navigation/native';
 import { ITypeAuthInput } from '@src/components/InputAuth/types';
 import { useFormik } from 'formik';
 import React, { createElement } from 'react';
@@ -20,7 +20,7 @@ const SignIn: React.FC = () => {
   });
 
   const handleSubmitLogin = (values: IFormSignInValues) => {
-    navigation.navigate('AppRoutes');
+    navigation.dispatch(StackActions.replace('AppRoutes'));
   };
 
   const onClearInput = (type: ITypeAuthInput) => {
