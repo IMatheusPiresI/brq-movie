@@ -6,6 +6,7 @@ type IProps = {
 
 type IViewProps = {
   film: ITMDBFilm;
+  getUrlImage: () => string;
   handleShowFilm: () => void;
 };
 

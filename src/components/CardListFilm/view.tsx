@@ -3,7 +3,11 @@ import { IViewProps } from './types';
 
 import * as S from './styles';
 
-const CardListFilmView: React.FC<IViewProps> = ({ film, handleShowFilm }) => {
+const CardListFilmView: React.FC<IViewProps> = ({
+  film,
+  handleShowFilm,
+  getUrlImage,
+}) => {
   return (
     <S.Card
       activeOpacity={0.7}
@@ -12,9 +16,7 @@ const CardListFilmView: React.FC<IViewProps> = ({ film, handleShowFilm }) => {
       <S.FilmImage
         testID="image-film"
         source={{
-          uri: `https://image.tmdb.org/t/p/w500${
-            film.poster_path ?? film.backdrop_path
-          }`,
+          uri: getUrlImage(),
         }}
       />
     </S.Card>

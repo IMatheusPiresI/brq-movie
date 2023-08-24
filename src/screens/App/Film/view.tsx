@@ -16,6 +16,7 @@ const FilmView: React.FC<IViewProps> = ({
   safeAreaTop,
   rAnimateShowHeader,
   handleSaveFilmToFavorite,
+  getUrlImage,
   scrollHandler,
   handleGoBack,
 }) => {
@@ -46,9 +47,7 @@ const FilmView: React.FC<IViewProps> = ({
         <S.BoxFilmPoster>
           <S.ImagePoster
             source={{
-              uri: `https://image.tmdb.org/t/p/w500${
-                film.poster_path ?? film.backdrop_path
-              }`,
+              uri: getUrlImage(),
             }}
             resizeMode="cover"
           />

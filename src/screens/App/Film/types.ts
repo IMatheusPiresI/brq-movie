@@ -8,6 +8,7 @@ type IViewProps = {
     opacity: number;
     zIndex: number;
   };
+  getUrlImage: () => string;
   handleSaveFilmToFavorite: () => void;
   handleGoBack: () => void;
   scrollHandler: (event: NativeSyntheticEvent<NativeScrollEvent>) => void;
