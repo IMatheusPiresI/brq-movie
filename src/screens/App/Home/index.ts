@@ -15,9 +15,16 @@ const Home: React.FC = () => {
   const getFilmsList = useCallback(async () => {
     setLoading(true);
     try {
-      if (!isConnected) {
+      if (!isConnected && films.length === 0) {
         showToastError(
           'Opss... Você está sem conexão com a internet, conecte-se para visualizar a listagem de filmes!',
+        );
+        return;
+      }
+
+      if (!isConnected) {
+        showToastError(
+          'Opss... Você está sem conexão com a internet, conecte-se para utilizar todos os recursos!',
         );
         return;
       }
@@ -28,7 +35,7 @@ const Home: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [isConnected]);
 
   useEffect(() => {
     getFilmsList();
